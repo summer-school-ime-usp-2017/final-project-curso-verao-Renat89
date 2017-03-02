@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cursos', 'CursoController@index');
+
+Route::get('/cursos/cria', 'CursoController@cria');
+
+Route::post('/cursos', 'CursoController@armazena');

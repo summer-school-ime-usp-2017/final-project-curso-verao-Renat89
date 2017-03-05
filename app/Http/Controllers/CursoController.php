@@ -24,7 +24,7 @@ class CursoController extends Controller
       $this->validate(request(), [
         'nome' => 'required|min:2|max:255',
         'descricao' => 'required|descricao',
-        'cargaHoraria' => 'required|cargaHoraria'        
+        'cargaHoraria' => 'required|cargaHoraria'
       ]);
 
       Curso::create(request()->all());
@@ -40,12 +40,16 @@ class CursoController extends Controller
 
   public function atualiza($id)
   {
+
     $cursos = Curso::find($id);
     $cursos->fill(request()->all());
+    $this->validate(request(), [
+      'nome' => 'required|min:2|max:255',
+      'descricao' => 'required|descricao',
+      'cargaHoraria' => 'required|cargaHoraria'
+    ]);
     $cursos->save();
-    //$valores = collect(request()->all());
-    //$valorea->pull('email');
-    //dd($valores->all());
+
     return redirect('/cursos');
   }
 

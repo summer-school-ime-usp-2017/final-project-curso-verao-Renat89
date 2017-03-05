@@ -25,3 +25,14 @@ Route::get('/cursos/edita/{id}', 'CursoController@edita');
 Route::post('/cursos', 'CursoController@armazena');
 
 Route::patch('/cursos/{id}', 'CursoController@atualiza');
+
+/*Routes de professors*/
+Route::get('/professors', 'ProfessorController@index');
+
+Route::get('/professors/cria', 'ProfessorController@cria');
+
+Route::get('/professors/edita/{id}', 'ProfessorController@edita');
+
+Route::post('/professors', 'ProfessorController@armazena');
+
+Route::patch('/professors/{id}', 'ProfessorController@atualiza');

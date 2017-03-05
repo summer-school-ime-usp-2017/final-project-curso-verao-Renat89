@@ -25,6 +25,7 @@
             <th>Nome</th>
             <th>Descrição</th>
             <th>Carga Horária</th>
+            <th>Edita</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +35,9 @@
               <td>{{ $curso->nome }}</td>
               <td>{{ $curso->descricao }}</td>
               <td>{{ $curso->cargaHoraria }}</td>
+              <td>
+                <a href="/cursos/edita/{{$curso->id}}"><span class="glyphicon glyphicon-edit-"></span>Editar</a>
+              <td>
             </tr>
           @endforeach
         </tbody>

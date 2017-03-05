@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Cadastro do curso')
+@section('title', 'Edição do curso')
 
-@section('page-header-content', 'Cadastro do curso')
+@section('page-header-content', 'Edição do curso')
 
 @section('content')
 
@@ -29,20 +29,23 @@
         </ul>
       </div>
       @endif
-      <form action="/cursos" method="POST">
+      <form action="/cursos/{{$cursos->id}}" method="POST">
         {{csrf_field()}}
+        {{method_field('PATCH')}} <!-- gambiarra do laravel pois o browser não entende o tipo PUT/PATCH-->
+
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input name="nome" id="nome" type="text" class="form-control">
+          <input value="{{$cursos->nome}}" name="nome" id="nome" type="text" class="form-control"> <!-- novo -->
         </div>
         <div class="form-group">
           <label for="descricao">Descrição</label>
-          <input name="descricao" id="descricao" type="text" class="form-control">
+          <input value="{{$cursos->descricao}}" name="descricao" id="descricao" type="text" class="form-control"> <!-- novo -->
         </div>
         <div class="form-group">
           <label for="cargaHoraria">Carga Horária</label>
-          <input name="cargaHoraria" id="cargaHoraria" type="number" class="form-control">
+          <input value="{{$cursos->cargaHoraria}}" name="cargaHoraria" id="cargaHoraria" type="number" class="form-control"> <!-- novo -->
         </div>
+
         <button class="btn btn-primary">Salvar</button>
       </form>
     </div>

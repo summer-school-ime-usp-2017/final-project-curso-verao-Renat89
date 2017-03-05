@@ -21,9 +21,33 @@ class CursoController extends Controller
 
     public function armazena()
     {
+      $this->validate(request(), [
+        'nome' => 'required|min:2|max:255',
+        'descricao' => 'required|descricao',
+        'cargaHoraria' => 'required|cargaHoraria'        
+      ]);
+
       Curso::create(request()->all());
 
       return redirect('/cursos');
     }
+
+    public function edita($id)
+  {
+    $cursos = Curso::find($id);  //Procurar o curso
+    return view('curso.edita', compact('cursos')); //pode usar curso/edita
+  }
+
+  public function atualiza($id)
+  {
+    $cursos = Curso::find($id);
+    $cursos->fill(request()->all());
+    $cursos->save();
+    //$valores = collect(request()->all());
+    //$valorea->pull('email');
+    //dd($valores->all());
+    return redirect('/cursos');
+  }
+
 
 }

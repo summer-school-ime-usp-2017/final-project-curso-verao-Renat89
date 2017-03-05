@@ -15,8 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*Routes de cursos*/
 Route::get('/cursos', 'CursoController@index');
 
 Route::get('/cursos/cria', 'CursoController@cria');
 
+Route::get('/cursos/edita/{id}', 'CursoController@edita');
+
 Route::post('/cursos', 'CursoController@armazena');
+
+Route::patch('/cursos/{id}', 'CursoController@atualiza');

@@ -21,11 +21,11 @@ class CursoController extends Controller
 
     public function armazena()
     {
-      $this->validate(request(), [
+      /*$this->validate(request(), [
         'nome' => 'required|min:2|max:255',
         'descricao' => 'required|descricao',
         'cargaHoraria' => 'required|cargaHoraria'
-      ]);
+      ]);*/
 
       Curso::create(request()->all());
 

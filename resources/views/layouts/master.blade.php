@@ -17,6 +17,10 @@
 
     </div>
 
+    <class="container">
+      <a href="/"><b>Home</b></a>
+    </div>
+
     <script src="/js/app.js" type="text/javascript"></script>
   </body>
 </html>

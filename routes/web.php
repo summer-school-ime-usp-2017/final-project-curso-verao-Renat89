@@ -47,3 +47,14 @@ Route::get('/alunos/edita/{id}', 'AlunoController@edita');
 Route::post('/alunos', 'AlunoController@armazena');
 
 Route::patch('/alunos/{id}', 'AlunoController@atualiza');
+
+/*Routes de turmas*/
+Route::get('/turmas', 'TurmaController@index');
+
+Route::get('/turmas/cria', 'TurmaController@cria');
+
+Route::get('/turmas/edita/{id}', 'TurmaController@edita');
+
+Route::post('/turmas', 'TurmaController@armazena');
+
+Route::patch('/turmas/{id}', 'TurmaController@atualiza');

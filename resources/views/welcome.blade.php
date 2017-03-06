@@ -85,8 +85,9 @@
                 <div class="links">
                     <a href="/cursos">Cursos</a>
                     <a href="/professors">Professores</a>
+                    <a href="/alunos">Alunos</a>
                     <a href="/turmas">Turmas</a>
-                    <a href="https://forge.laravel.com">Inscrições</a>
+                    <a href="/inscricaos">Inscrições</a>
 
                 </div>
             </div>

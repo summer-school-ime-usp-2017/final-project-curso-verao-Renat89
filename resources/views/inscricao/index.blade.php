@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'professors')
+@section('title', 'Inscrições')
 
-@section('page-header-content', 'professors')
+@section('page-header-content', 'Inscrições')
 
 @section('content')
 
@@ -11,8 +11,8 @@
       <div class="panel panel-primary">
         <div class="panel-heading"><h3 class="panel-title">Ações</h3></div>
         <div class="panel-body">
-          <a href="/professors/cria">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> professor
+          <a href="/inscricaos/cria">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Inscrição
           </a>
         </div>
       </div>
@@ -22,19 +22,18 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Edita</th>
+            <th>Aluno</th>
+            <th>ID da Turma</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($professors as $professor)
+          @foreach($inscricaos as $inscricao)
             <tr>
-              <td>{{ $professor->id }}</td>
-              <td>{{ $professor->nome }}</td>
-              <td>{{ $professor->email }}</td>
+              <td>{{ $inscricao->id }}</td>
+              <td>{{ $inscricao->nome_aluno }}</td>
+              <td>{{ $inscricao->id_turma }}</td>
               <td>
-                <a href="/professors/edita/{{$professor->id}}"><span class="glyphicon glyphicon-edit-"></span>Editar</a>
+                <a href="/inscricaos/edita/{{$inscricao->id}}"><span class="glyphicon glyphicon-edit-"></span>Editar</a>
               </td>
             </tr>
           @endforeach

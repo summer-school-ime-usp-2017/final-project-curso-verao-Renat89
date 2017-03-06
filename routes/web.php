@@ -58,3 +58,14 @@ Route::get('/turmas/edita/{id}', 'TurmaController@edita');
 Route::post('/turmas', 'TurmaController@armazena');
 
 Route::patch('/turmas/{id}', 'TurmaController@atualiza');
+
+/*Routes de Inscrições*/
+Route::get('/inscricaos', 'InscricaoController@index');
+
+Route::get('/inscricaos/cria', 'InscricaoController@cria');
+
+Route::get('/inscricaos/edita/{id}', 'InscricaoController@edita');
+
+Route::post('/inscricaos', 'InscricaoController@armazena');
+
+Route::patch('/inscricaos/{id}', 'InscricaoController@atualiza');
